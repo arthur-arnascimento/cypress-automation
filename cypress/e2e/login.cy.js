@@ -2,8 +2,15 @@
 
 describe('Funcionalidade Login', () => {
 
-  it('Deve fazer login com sucesso', () => {
+  beforeEach('Visitando Url', () => {
     cy.visit('http://lojaebac.ebaconline.art.br/')
+  })
+
+  afterEach('Evidência do teste', () => {
+    cy.screenshot()
+  })
+
+  it('Deve fazer login com sucesso', () => {
     cy.get('.icon-user-unfollow').click()
     cy.location('pathname').should('eq', '/minha-conta/')
     cy.get('#username').type('aluno_ebac@teste.com')
@@ -12,7 +19,6 @@ describe('Funcionalidade Login', () => {
   })
 
   it('Deve exibir mensagem de erro ao inserir usuário inválido', () => {
-    cy.visit('http://lojaebac.ebaconline.art.br/')
     cy.get('.icon-user-unfollow').click()
     cy.location('pathname').should('eq', '/minha-conta/')
     cy.get('#username').type('ebac@teste.com')
@@ -22,7 +28,6 @@ describe('Funcionalidade Login', () => {
   })
 
   it('Deve exibir mensagem de erro ao inserir senha inválida', () => {
-    cy.visit('http://lojaebac.ebaconline.art.br/')
     cy.get('.icon-user-unfollow').click()
     cy.location('pathname').should('eq', '/minha-conta/')
     cy.get('#username').type('aluno_ebac@teste.com')

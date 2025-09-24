@@ -16,7 +16,7 @@ export function generatePassword(length = 12) {
 
 describe('Visitando Url', () => {
     beforeEach('Visitando Url', () => {
-        cy.visit('http://lojaebac.ebaconline.art.br/')
+        cy.visit('minha-conta')
     })
 
     afterEach('Evidência do teste', () => {
@@ -29,8 +29,6 @@ describe('Visitando Url', () => {
         const randomEmail = faker.internet.email()
         const randomPassword = generatePassword()
 
-        cy.get('.icon-user-unfollow').click()
-        cy.location('pathname').should('eq', '/minha-conta/')
         cy.get('#reg_email').type(randomEmail)
         cy.get('#reg_password').type(randomPassword)
         cy.get('[name="register"]').click()

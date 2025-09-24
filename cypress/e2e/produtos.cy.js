@@ -2,7 +2,7 @@
 
 describe('', () => {
     beforeEach('Visitando Url', () => {
-        cy.visit('http://lojaebac.ebaconline.art.br/produtos')
+        cy.visit('produtos')
     })
 
     afterEach('Evidência do teste', () => {

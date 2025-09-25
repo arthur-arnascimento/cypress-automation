@@ -2,8 +2,15 @@
 const perfil = require('../fixtures/perfil.json')
 
 describe('Funcionalidade Login', () => {
+    
+    before('Criando cadastro para teste', () => {
+        cy.limparCache()
+        cy.visit('minha-conta')
+        cy.cadastro()
+    })
 
     beforeEach('Visitando Url', () => {
+        cy.limparCache()
         cy.visit('minha-conta')
     })
 
@@ -17,16 +24,16 @@ describe('Funcionalidade Login', () => {
         cy.get('[name="login"]').click()
     })
 
-    it('Deve fazer login com sucesso - Arquivo de dados', () => {
-        cy.get('#username').type(perfil.usuario)
+    it.only('Deve fazer login com sucesso - Arquivo de dados', () => {
+        cy.get('#username').type(perfil.email)
         cy.get('#password').type(perfil.senha)
         cy.get('[name="login"]').click()
     })
 
     it('Deve fazer login com sucesso - Usando fixture', () => {
         cy.fixture('perfil').then(dados => {
-            cy.get('#username').type(perfil.usuario)
-            cy.get('#password').type(perfil.senha, {log: false})
+            cy.get('#username').type(perfil.email)
+            cy.get('#password').type(perfil.senha, { log: false })
             cy.get('[name="login"]').click()
         })
     })
@@ -43,5 +50,9 @@ describe('Funcionalidade Login', () => {
         cy.get('#password').type('123123')
         cy.get('[name="login"]').click()
         cy.get('.woocommerce-error').should('contain', 'Erro: A senha fornecida para o e-mail aluno_ebac@teste.com está incorreta. Perdeu a senha?')
+    })
+
+    it('Deve fazer login com sucesso - Usando commands', () => {
+        cy.login()
     })
 })

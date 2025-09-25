@@ -16,6 +16,7 @@ export function generatePassword(length = 12) {
 
 describe('Visitando Url', () => {
     beforeEach('Visitando Url', () => {
+        cy.limparCache()
         cy.visit('minha-conta')
     })
 
@@ -38,5 +39,13 @@ describe('Visitando Url', () => {
         cy.get('#account_last_name').type(randomLastName)
         cy.get('[name="save_account_details"]').click()
         cy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso.')
+    })
+
+    it.only('Deve fazer um registro - Usando commands', () => {
+        cy.cadastro()
+    })
+
+    it('Deve fazer um registro e alterar o nome e sobrenome - Usando commands', () => {
+        cy.cadastroCompleto()
     })
 })

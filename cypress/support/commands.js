@@ -54,9 +54,6 @@ Cypress.Commands.add('cadastro', () => {
     cy.get('#reg_password').type(randomPassword)
     cy.get('[name="register"]').click()
 
-    cy.wait(1000)
-    cy.get('.page-title').should('be.visible')
-
     // cy.writeFile('cypress/fixtures/perfil.json', {
     //     email: randomEmail,
     //     senha: randomPassword

@@ -32,8 +32,8 @@ describe('Funcionalidade Login', () => {
 
     it('Deve fazer login com sucesso - Usando fixture', () => {
         cy.fixture('perfil').then(dados => {
-            cy.get('#username').type(perfil.email)
-            cy.get('#password').type(perfil.senha, { log: false })
+            cy.get('#username').type(dados.email)
+            cy.get('#password').type(dados.senha, { log: false })
             cy.get('[name="login"]').click()
         })
     })

@@ -1,0 +1,41 @@
+[
+    {
+        "nome": "Arthur",
+        "sobrenome": "Nascimento",
+        "empresa": "Google",
+        "endereco": "São Carlos",
+        "numero": "987",
+        "pais": "Brasil",
+        "cidade": "São Paulo",
+        "estado": "São Paulo",
+        "cep": "11110000",
+        "telefone": "11912345678",
+        "email": "arthur@teste.com"
+    },
+    {
+        "nome": "Carine",
+        "sobrenome": "Almeida",
+        "empresa": "Tesla",
+        "endereco": "São Domigues",
+        "numero": "123",
+        "pais": "Brasil",
+        "cidade": "Fortaleza",
+        "estado": "Ceará",
+        "cep": "11010011",
+        "telefone": "85987654345",
+        "email": "carine@teste.com"
+    },
+    {
+        "nome": "Larissa",
+        "sobrenome": "Lima",
+        "empresa": "Amazon",
+        "endereco": "Bento Chicó",
+        "numero": "456",
+        "pais": "Brasil",
+        "cidade": "São Paulo",
+        "estado": "São Paulo",
+        "cep": "00100010",
+        "telefone": "11987654321",
+        "email": "larissa@teste.com"
+    }
+]

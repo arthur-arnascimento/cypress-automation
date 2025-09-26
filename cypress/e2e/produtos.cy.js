@@ -1,6 +1,6 @@
 /// <reference types = "cypress" />
 
-describe('', () => {
+describe('Deve adicionar um produto ao carrinho', () => {
     beforeEach('Visitando Url', () => {
         cy.limparCache()
         cy.visit('produtos')

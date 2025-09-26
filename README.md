@@ -47,7 +47,7 @@ Este projeto demonstra habilidades avançadas em **automação de testes com Cyp
 ### 🔑 Login
 - Cenários de sucesso e falha.  
 - Técnicas: commands customizados, fixtures e data-driven testing.  
-- Evidências: screenshots + vídeos.
+- Evidências: screenshots.
 
 ### 📝 Cadastro / Endereço de Faturamento
 - Criação de usuários e preenchimento de endereço.  
@@ -153,4 +153,5 @@ npx cypress run --spec "cypress/e2e/apresentacaoPortfolio.cy.js"
 ---
 
 ## 🏆 Conclusão
+
 Este projeto demonstra habilidades em automação com Cypress, cobrindo técnicas como **comandos customizados, Page Object, data-driven testing, fixtures, evidências visuais e testes parametrizados**.
